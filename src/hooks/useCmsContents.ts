@@ -5,6 +5,7 @@ async function fetchCmsContents(path: string): Promise<string> {
   const normalizedPath = path.replace(/^\//, "");
   let url: string;
   if (process.env.NODE_ENV === "development") {
+    // 상대 경로로 요청해 next.config.ts rewrites 프록시를 타도록 함 (CORS 방지)
     url = `/${normalizedPath}`;
   } else {
     const root = process.env.NEXT_PUBLIC_WEB_ROOT;

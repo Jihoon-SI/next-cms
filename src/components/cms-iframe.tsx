@@ -1,7 +1,7 @@
 "use client";
 import { useEffect, useRef } from "react";
 
-export function ShadowContent({
+export function CmsIframe({
   html,
   className,
 }: {
